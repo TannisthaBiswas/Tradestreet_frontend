@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CSS/LoginSignup.css";
-import { backend_url, admin_url} from "../App";
+import { backend_url } from "../App";
 
 const LoginSignup = () => {
   const [state, setState] = useState("Login");
@@ -26,7 +26,7 @@ const LoginSignup = () => {
     if (dataObj.success) {
       localStorage.setItem("auth-token", dataObj.token);
       if (dataObj.role === "admin") {
-        window.location.replace(`${admin_url}`); 
+        window.location.replace("http://localhost:3001"); // Admin panel URL
       } else {
         window.location.replace("/");
       }
@@ -51,7 +51,7 @@ const LoginSignup = () => {
     if (dataObj.success) {
       localStorage.setItem("auth-token", dataObj.token);
       if (dataObj.role === "admin") {
-        window.location.replace(`${admin_url}`); 
+        window.location.replace("http://localhost:3001"); // Admin panel URL
       } else {
         window.location.replace("/");
       }

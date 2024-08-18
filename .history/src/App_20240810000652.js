@@ -13,8 +13,7 @@ import Checkout from "./Pages/Checkout";
 import OrderConfirmation from "./Components/Order/OrderConfirmation";
 import Orders from "./Pages/Orders";
 
-export const admin_url = 'http://localhost:3001';
-export const backend_url = 'https://tradestreet-backend.onrender.com';
+export const backend_url = 'http://localhost:4000';
 export const currency = '₹';
 
 function App() {

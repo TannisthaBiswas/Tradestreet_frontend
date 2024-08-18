@@ -10,6 +10,10 @@
 
 # production
 /build
+node_modules
+/node_modules
+.history
+/.history
 
 # misc
 .DS_Store
