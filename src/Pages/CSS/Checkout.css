@@ -1,0 +1,131 @@
+.checkout-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout-stepper {
+    margin-bottom: 20px;
+}
+
+.checkout-stepper .MuiStepLabel-root {
+    font-size: 16px;
+}
+
+.checkout-content {
+    padding: 20px;
+}
+
+.checkout-address,
+.checkout-summary,
+.checkout-payment,
+.checkout-confirmation {
+    margin-bottom: 20px;
+}
+
+.checkout-address .MuiTextField-root {
+    margin-bottom: 16px;
+}
+
+.checkout-summary {
+    margin-top: 20px;
+}
+
+.checkout-summary .cartitems-product-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+}
+
+.checkout-summary .MuiTypography-body1 {
+    font-size: 16px;
+}
+
+.checkout-summary .MuiTypography-body2 {
+    font-size: 14px;
+}
+
+.checkout-summary .cart-totals {
+    margin-top: 20px;
+}
+
+.checkout-summary .cart-totals .MuiTypography-h6 {
+    font-weight: 600;
+}
+
+.checkout-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.checkout-buttons .MuiButton-root {
+    margin-left: 10px;
+}
+
+.checkout-message {
+    margin-top: 20px;
+    color: rgb(41, 175, 110); 
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Stepper */
+.checkout-stepper .MuiStepLabel-root {
+    color: #21c679; 
+}
+
+.checkout-stepper .MuiStepConnector-line {
+    border-color: #21c679; 
+}
+
+.checkout-stepper .MuiStepIcon-root {
+    color: #21c679; /* Stepper number color */
+}
+
+/* Active and completed steps */
+.checkout-stepper .MuiStepIcon-root.Mui-active,
+.checkout-stepper .MuiStepIcon-root.Mui-completed {
+    color: #4cc88d; /* Green for active/completed steps */
+}
+
+/* Inactive step color */
+.checkout-stepper .MuiStepIcon-root {
+    color: #a4ccb7; /* Lighter green for inactive steps */
+}
+
+/* Buttons */
+.checkout-buttons .MuiButton-root {
+    background-color: rgb(41, 175, 110); /* Updated button background color */
+    color: #ffffff; /* Ensure text is readable on green background */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.checkout-buttons .MuiButton-root:hover {
+    background-color: #21c679; /* Lighter green on hover */
+}
+
+.checkout-buttons .MuiButton-root:disabled {
+    background-color: #f2f2f2; /* Light gray for disabled buttons */
+    color: #cccccc; /* Gray text for disabled buttons */
+    border: 1px solid #cccccc; /* Gray border for disabled buttons */
+}
+
+/* Additional Updates */
+.checkout-summary .cart-totals .MuiTypography-h6 {
+    color: #78caa2; /* Text color for total amount */
+}
+
+.checkout-summary .MuiTypography-body1 {
+    color: #4cc88d; /* Text color for product details */
+}
+
+.checkout-summary .MuiTypography-body2 {
+    color: #78caa2; /* Text color for additional info */
+}
+
+.checkout-content {
+    background-color: #fcfcfc; /* Background color for content sections */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+}

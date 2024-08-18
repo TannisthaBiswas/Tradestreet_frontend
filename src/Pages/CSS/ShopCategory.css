@@ -1,0 +1,255 @@
+.shopcategory-banner {
+    display: block;
+    margin: 30px auto;
+    width: 80%;
+}
+
+.shopcategory-indexSort {
+    display: flex;
+    margin: 0px 170px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopcategory-sort {
+    position: relative; /* For dropdown arrow positioning */
+    display: inline-block; /* Inline-block to keep it in line with other elements */
+    width: 200px; /* Set a fixed width for consistency */
+}
+
+.shopcategory-sort select {
+    width: 100%;
+    padding: 10px 20px;
+    border: none; /* Remove the default border */
+    border-radius: 40px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    appearance: none; /* Remove default dropdown styling */
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    -moz-appearance: none; /* Remove default styling in Mozilla browsers */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+
+.shopcategory-sort select:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px  rgb(41, 175, 110); /* Add focus ring */
+}
+
+.shopcategory-sort::after {
+    content: ""; /* Add content for the custom dropdown arrow */
+    position: absolute;
+    right: 20px; /* Positioning of the arrow */
+    top: 60%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    width: 10px;
+    height: 10px;
+    border: solid  rgb(41, 175, 110); /* Arrow color */
+    border-width: 0 2px 2px 0; /* Arrow shape */
+    transform: translateY(-50%) rotate(45deg); /* Rotate to make it an arrow */
+    pointer-events: none; /* Ensure the arrow doesn’t interfere with clicking */
+}
+
+.shopcategory-indexSort p span {
+    font-weight: 600;
+}
+
+
+
+.shopcategory-products {
+    width: 90%;
+    max-width: 1360px;
+    border-radius: 40px;
+    justify-content: center;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.shopcategory-loadmore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    width: 200px;
+    height: 60px;
+    border-radius: 75px;
+    background: #ededed;
+    color: #787878;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center; /* Center text inside button */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.shopcategory-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between the buttons */
+    margin: 20px auto;
+}
+
+.shopcategory-pagination button {
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid rgb(41, 175, 110);
+    background:#21c679;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.shopcategory-pagination button:hover {
+    background:  rgb(41, 175, 110);
+    color: #ffffff;
+}
+
+.shopcategory-pagination button:disabled {
+    background: #f2f2f2;
+    color: #cccccc;
+    border: 1px solid #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width:1280px) {
+    .shopcategory-banner {
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .shopcategory-indexSort {
+        width: 90%;
+        margin: auto;
+    }
+
+    .shopcategory-sort select {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .shopcategory-indexSort p {
+        font-size: 12px;
+    }
+
+    .shopcategory-pagination button {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+/* Container for the filters */
+.shopcategory-filters {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Individual filter section */
+  .filter-section {
+    margin-bottom: 15px;
+  }
+  
+  /* Filter section labels */
+  .filter-section p {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* Checkbox and labels */
+  .filter-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  /* Checkbox input */
+  .filter-section input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  /* Dropdown select box */
+  .filter-section select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Filter toggle button */
+  .filter-toggle {
+    background-color: #21c679;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .filter-toggle:hover {
+    background-color: rgb(41, 175, 110);
+  }
+  .shopcategory-search {
+    
+  width: 100%;
+  max-width: 400px; /* Adjust the max-width as needed */
+  padding: 10px 15px;
+  margin: 20px auto;
+  border: 1px solid #ccc; /* Light border for subtle distinction */
+  border-radius: 5px; /* Slightly rounded corners */
+  font-size: 16px; /* Readable font size */
+  color: #333; /* Dark grey text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shopcategory-search:focus {
+  border-color: rgb(41, 175, 110); /* Darker border on focus */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+  
+  /* Responsive design for filters */
+  @media (min-width: 768px) {
+    .shopcategory-filters {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .filter-section {
+      width: 22%;
+    }
+  }
+  
+  
+
+@media (max-width:800px) {
+    .shopcategory-banner {
+        width: 95%;
+    }
+
+    .shopcategory-loadmore {
+        margin: 60px auto;
+        width: 150px;
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .shopcategory-pagination button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}

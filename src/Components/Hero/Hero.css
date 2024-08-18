@@ -1,0 +1,86 @@
+.hero {
+    min-height: 90vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    padding: 10px 9%;
+  }
+  
+  .hero-content {
+    text-align: left; /* Align text to the left */
+    color: white;
+    max-width: 600px; /* Limit the width of the text for a sleeker look */
+  }
+  
+  .hero-content h2 {
+    color: #fcfcfc;
+    font-size: 20px;
+    font-weight: 300; /* Sleeker, lighter font weight */
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    color: #fcfcfc;
+    font-size: 36px; /* Reduced font size for a sleeker appearance */
+    font-weight: 500; /* Medium weight for a clean, sleek look */
+    margin: 5px 0;
+  }
+  
+  .hero-hand-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-latest-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 200px;
+    height: 45px;
+    border-radius: 50px; /* More rounded button for a sleek design */
+    background: black;
+    color: white;
+    font-size: 14px;
+    font-weight: 400; /* Slightly lighter font weight */
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .hero-latest-btn:hover {
+    background: black;
+  }
+  
+  @media (max-width: 1200px) {
+    .hero-content p {
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .hero-content p {
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .hero {
+      padding: 0 10%;
+      min-height: 95vh;
+    }
+  
+    .hero-content p {
+      font-size: 24px;
+    }
+  
+    .hero-latest-btn {
+      width: 180px;
+      height: 40px;
+      font-size: 14px;
+    }
+  }
+  

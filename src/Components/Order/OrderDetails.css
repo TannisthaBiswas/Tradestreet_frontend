@@ -1,0 +1,83 @@
+/* OrderDetails.css */
+
+.order-details-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif; /* You can choose any preferred font */
+  }
+  
+  .order-details-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Darker color for better readability */
+  }
+  
+  .order-paper {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd; /* Light border color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .order-id {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Darker color for better readability */
+  }
+  
+  .order-info {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555; /* Medium color for less emphasis */
+  }
+  
+  .order-items {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .order-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light border for items */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Slightly different background for items */
+  }
+  
+  .order-item-details {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #666; /* Lighter color for item details */
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #ddd; /* Light border for horizontal line */
+    margin: 10px 0;
+  }
+  
+  .order-empty {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777; /* Lighter color for empty state */
+  }
+  
+  .error-message {
+    color: #d32f2f; /* Red color for errors */
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .cancelled-text {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  
