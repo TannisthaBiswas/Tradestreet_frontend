@@ -31,7 +31,7 @@ const CartItems = () => {
           <div className="cartitems-format-main cartitems-format">
             <img
               className="cartitems-product-icon"
-              src={backend_url + item.image}
+              src={item.image}
               alt="img"
             />
             <p className="cartitems-product-title">{item.name}</p>
