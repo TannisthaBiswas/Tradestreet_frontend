@@ -160,7 +160,7 @@ const Checkout = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <img
                         className="cartitems-product-icon"
-                        src={backend_url + item.image}
+                        src={item.image}
                         alt="Product"
                         style={{ width: 80, height: 80, marginRight: 16 }}
                       />
