@@ -1,7 +1,5 @@
 import React from "react";
 import "./Hero.css";
-import Banner_image from "../Assets/Banner_image.png";
-import Img3 from "../Assets/Img3.png";
 import Img7 from "../Assets/Img7.png";
 
 const Hero = () => {

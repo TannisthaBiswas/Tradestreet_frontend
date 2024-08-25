@@ -79,7 +79,6 @@ const ShopContextProvider = (props) => {
       fetchCartItems(); 
     });
   };
-console.log("cartItems from ShopContext", cartItems)
   const contextValue = { products, getTotalCartItems, cartItems, addToCart, removeFromCart, getTotalCartAmount, fetchCartItems };
   return (
     <ShopContext.Provider value={contextValue}>
