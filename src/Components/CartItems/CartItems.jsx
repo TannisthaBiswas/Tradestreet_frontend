@@ -32,6 +32,7 @@ const CartItems = () => {
             <img
               className="cartitems-product-icon"
               src={item.image}
+              
               alt="img"
             />
             <p className="cartitems-product-title">{item.name}</p>

@@ -15,11 +15,7 @@ const Hero = () => {
              </div>
         </div>
 
-        {/* <div className="hero-latest-btn" >
-          <Link to="/" style={{ textDecoration: "none" }}>
-          Explore More
-        </Link>
-        </div> */}
+        
       </div>
     </div>
   );

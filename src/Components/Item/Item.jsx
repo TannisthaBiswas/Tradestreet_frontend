@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { backend_url, currency } from '../../App'
 
 const Item = (props) => {
+  console.log("props",props)
   return (
     <div className='item'>
       <Link to={`/product/${props.id}`}><img onClick={window.scrollTo(0, 0)} src={props.image} alt="products" /></Link>
