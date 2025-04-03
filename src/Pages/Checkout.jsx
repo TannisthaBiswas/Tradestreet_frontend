@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Stepper, Step, StepLabel, Button, TextField, Typography, Paper, Box } from '@mui/material';
+import { Stepper, Step, StepLabel, Button, TextField, Typography, Paper, Box,MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
 import { backend_url, currency } from "../App";
@@ -13,6 +13,8 @@ const steps = [
 ];
 
 const Checkout = () => {
+
+  const [paymentMethod, setPaymentMethod] = useState("");
   const [activeStep, setActiveStep] = useState(0);
   const [address, setAddress] = useState({
     street: '',
@@ -47,38 +49,68 @@ const Checkout = () => {
     }));
   };
 
-  const handleCheckout = () => {
+  const handleCheckout = async() => {
     const token = localStorage.getItem('auth-token');
   
     if (token) {
       const shippingAddress = `${address.street}, ${address.city}, ${address.state} ${address.postalCode}, ${address.country}`;
   
-      fetch(`${backend_url}/placeorder`, {  
-        method: 'POST',
+
+      if (paymentMethod === "cod") {
+        fetch(`${backend_url}/placeorder`, {  
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'auth-token': token,
+          },
+          body: JSON.stringify({
+            shippingAddress: shippingAddress,
+          }),
+        })
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.success) {
+            console.log('Checkout successful:', result.order);
+            fetchCartItems();
+            navigate('/orderconfirmation'); 
+          } else {
+            alert('Checkout failed: ' + result.message);
+            setMessage(`Checkout failed: ${result.message}`); 
+          }
+        })
+        .catch((error) => {
+          console.error('Error during checkout:', error);
+          alert('An error occurred during checkout.');
+          setMessage('An error occurred during checkout.'); 
+        });
+      }
+
+      if (paymentMethod === "online") {  fetch(`${backend_url}/create-checkout-session`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'auth-token': token,
+            "Content-Type": "application/json",
+            "auth-token": token,
         },
         body: JSON.stringify({
-          shippingAddress: shippingAddress,
+            shippingAddress,
+            paymentMethod: "Online",
         }),
-      })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.success) {
-          console.log('Checkout successful:', result.order);
-          fetchCartItems();
-          navigate('/orderconfirmation'); 
-        } else {
-          alert('Checkout failed: ' + result.message);
-          setMessage(`Checkout failed: ${result.message}`); 
-        }
-      })
-      .catch((error) => {
-        console.error('Error during checkout:', error);
-        alert('An error occurred during checkout.');
-        setMessage('An error occurred during checkout.'); 
-      });
+    })
+        .then((res) => res.json())
+        .then((session) => {
+            if (session.url) {
+                window.location.href = session.url; // Redirect to Stripe checkout page
+            
+              } else {
+                alert('Failed to initiate online payment.');
+            }
+        })
+        .catch((error) => {
+            console.error("Stripe Checkout error:", error);
+            alert("Error initiating payment.");
+        });
+      }
+      
     } else {
       alert('User not authenticated.');
       setMessage('User not authenticated.'); 
@@ -193,14 +225,18 @@ const Checkout = () => {
         return (
           <Box>
             <Typography variant="h6">Payment</Typography>
-            {/* Add payment form here */}
-            <TextField
-              label="Payment Details"
-              fullWidth
-              variant="outlined"
-              //value={paymentDetails}
-              //onChange={(e) => setPaymentDetails(e.target.value)}
-            />
+            <FormControl fullWidth variant="outlined" sx={{ mt: 2 }}>
+        <InputLabel>Select Payment Method</InputLabel>
+        <Select
+          value={paymentMethod}
+          onChange={(e) => setPaymentMethod(e.target.value)}
+          label="Select Payment Method"
+        >
+          <MenuItem value="cod">Cash on Delivery (COD)</MenuItem>
+          <MenuItem value="online">Online Payment</MenuItem>
+        </Select>
+      </FormControl>
+            
           </Box>
         );
       case 3:

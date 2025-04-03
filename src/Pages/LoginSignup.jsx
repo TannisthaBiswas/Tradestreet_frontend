@@ -87,7 +87,7 @@ const LoginSignup = () => {
           )}
           <input
             type="email"
-            placeholder="Email address"
+            placeholder="Email"
             name="email"
             value={formData.email}
             onChange={changeHandler}
@@ -104,7 +104,14 @@ const LoginSignup = () => {
         <button onClick={() => (state === "Login" ? login() : signup())}>
           Continue
         </button>
-
+        {state === "Login" && (
+          <p className="loginsignup-login">
+            Forgot your password?{" "}
+            <span>
+              Reset here
+            </span>
+          </p>
+        )}
         {state === "Login" ? (
           <p className="loginsignup-login">
             Create an account?{" "}
