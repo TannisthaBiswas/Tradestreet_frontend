@@ -81,7 +81,7 @@ const LoginSignup = () => {
                 placeholder="Select role"
               >
                 <option value="user">User</option>
-                <option value="admin">Admin</option>
+               
               </select>
             </>
           )}
